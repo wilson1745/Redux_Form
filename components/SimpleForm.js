@@ -92,5 +92,5 @@ const SimpleForm = props => {
 };
 
 export default reduxForm({
-  form: "SimpleForm" // a unique identifier for this form
+  form: "simple" // a unique identifier for this form
 })(SimpleForm);

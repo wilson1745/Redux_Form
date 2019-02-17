@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import renderField from "../tools/renderField";
 
 const validate = values => {
   const errors = {};
@@ -36,23 +37,6 @@ const warn = values => {
   return warnings;
 };
 
-const renderField = ({
-  input,
-  label,
-  type,
-  meta: { touched, error, warning }
-}) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      {touched &&
-        ((error && <span>{error}</span>) ||
-          (warning && <span>{warning}</span>))}
-    </div>
-  </div>
-);
-
 const SyncValidationForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
@@ -78,7 +62,7 @@ const SyncValidationForm = props => {
 };
 
 export default reduxForm({
-  form: "SyncValidationForm", // a unique identifier for this form
+  form: "syncValidation", // a unique identifier for this form
   validate, // <--- validation function given to redux-form
   warn // <--- warning function given to redux-form
 })(SyncValidationForm);

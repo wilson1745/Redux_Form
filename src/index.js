@@ -6,6 +6,7 @@ import store from "./store";
 import showResults from "./showResults";
 import SimpleForm from "../components/SimpleForm";
 import SyncValidationForm from "../components/SyncValidationForm";
+import FieldLevelValidationForm from "../components/FieldLevelValidationForm";
 
 //import "./styles.css";
 
@@ -16,10 +17,13 @@ ReactDOM.render(
     <div style={{ padding: 15 }}>
       <h2>Simple Form</h2>
       <SimpleForm onSubmit={showResults} />
-      <Values form="SimpleForm" />
+      <Values form="simple" />
       <h2>Synchronous Validation</h2>
       <SyncValidationForm onSubmit={showResults} />
-      <Values form="SyncValidationForm" />
+      <Values form="syncValidation" />
+      <h2>Field-Level Validation</h2>
+      <FieldLevelValidationForm onSubmit={showResults} />
+      <Values form="fieldLevelValidation" />
     </div>
   </Provider>,
   rootElement
