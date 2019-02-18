@@ -8,6 +8,7 @@ import SimpleForm from "../components/SimpleForm";
 import SyncValidationForm from "../components/SyncValidationForm";
 import FieldLevelValidationForm from "../components/FieldLevelValidationForm";
 import SubmitValidationForm from "../components/SubmitValidationForm";
+import AsyncValidationForm from "../components/AsyncValidationForm";
 
 //import "./styles.css";
 
@@ -31,6 +32,10 @@ ReactDOM.render(
       <h2>Submit Validation</h2>
       <SubmitValidationForm onSubmit={showResults} />
       <Values form="submitValidation" />
+
+      <h2>Async Validation</h2>
+      <AsyncValidationForm onSubmit={showResults} />
+      <Values form="asyncValidation" />
     </div>
   </Provider>,
   rootElement
